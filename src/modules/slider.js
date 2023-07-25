@@ -12,29 +12,24 @@ const slider = (block, items, currentSlide = 0, countSlide = 3) => {
 
   const showSlides = (elems, countSlide, currentSlide) => {
     let current = currentSlide;
-    let i = 0;
 
     elems.forEach(elem => {
       elem.classList.add('hide');
     })
 
-    do {
-      if (current < 0) current = 0;
-      if (current > elems.length) current = elems.length;
-
+    for (let i = 0; i < countSlide; i++) {
       showSlide(elems, current);
       current++;
-      i++;
+      if (current == elems.length) current = 0;
     }
-    while (i < countSlide)
   }
 
   sliderBlock.addEventListener('click', e => {
     e.preventDefault();
 
-    if (!e.target.closest('.benefits__arrow')) return;
+    if (!e.target.closest(`.${block}__arrow`)) return;
 
-    if (e.target.closest('.benefits__arrow--right')) {
+    if (e.target.closest(`.${block}__arrow--right`)) {
       currentSlide++;
 
       if (currentSlide >= slides.length) {
@@ -42,7 +37,7 @@ const slider = (block, items, currentSlide = 0, countSlide = 3) => {
       }
 
       showSlides(slides, countSlide, currentSlide);
-    } else if (e.target.closest('.benefits__arrow--left')) {
+    } else if (e.target.closest(`.${block}__arrow--left`)) {
       currentSlide--;
 
       if (currentSlide < 0) {
