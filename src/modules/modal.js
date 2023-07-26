@@ -1,19 +1,39 @@
 const modal = () => {
-  const orderCallBtn = document.querySelector('.button');
-  const modal = document.querySelector('.header-modal');
   const overlay = document.querySelector('.overlay');
-  const modalCloseBtn = document.querySelector('.header-modal__close');
-  
+  const openModalBtn = document.querySelectorAll('div[data-modal]');
+  const modalCloseBtn = document.querySelectorAll('span[title="Close"]');
 
-  const handleShowModal = (e) => {
+  const showModal = (e) => {
     e.preventDefault();
-    
-    modal.style.display = modal.style.display == '' ? 'block' : '';
-    overlay.style.display = overlay.style.display == '' ? 'block' : '';
+
+    const modalId = e.target.closest('div').getAttribute('data-modal');
+    const modalElem = document.querySelector(`.${modalId}`);
+
+    modalElem.classList.add('show');
+    overlay.classList.add('show');
+    overlay.setAttribute('data-modal', modalId)
   }
 
-  orderCallBtn.addEventListener('click', handleShowModal);
-  modalCloseBtn.addEventListener('click', handleShowModal);
+  const closeModal = (e) => {
+    let modalElem = e.target.closest('.show');
+
+    if (e.target == overlay) {
+      const modalId = e.target.getAttribute('data-modal');
+      modalElem = document.querySelector(`.${modalId}`);
+    }
+
+    modalElem.classList.remove('show');
+    overlay.classList.remove('show');
+    overlay.removeAttribute('data-modal');
+  }
+
+  openModalBtn.forEach(btn => {
+    btn.addEventListener('click', showModal)
+  });
+  modalCloseBtn.forEach(btn => {
+    btn.addEventListener('click', closeModal)
+  });
+  overlay.addEventListener('click', closeModal);
 }
 
 export default modal;
