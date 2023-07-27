@@ -1299,18 +1299,6 @@ p.services-image_mobile {
   margin-top: 30px;
 }
 
-.show {
-  display: block;
-}
-
-.is-valid {
-  border-color: green;
-}
-
-.is-invalid {
-  border-color: red;
-}
-
 @media (max-width: 1850px) {
   #offer .container {
     height: 650px;
