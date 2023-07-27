@@ -1,6 +1,6 @@
 const slider = (block, items, currentSlide = 0, countSlide = 3) => {
   const sliderBlock = document.getElementById(block);
-  const slides = document.querySelectorAll(items);
+  const slides = sliderBlock.querySelectorAll(items);
 
   const showSlide = (elems, current) => {
     elems.forEach((elem, i) => {

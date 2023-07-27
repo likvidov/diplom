@@ -7,7 +7,7 @@ let clientWidth = document.documentElement.clientWidth;
 
 modal();
 clientWidth > 575 ? slider('benefits', '.benefits__item', 0, 3) : slider('benefits', '.benefits__item', 0, 1);
-clientWidth > 575 ? slider('services', '.col-md-12', 0, 2) : slider('services', '.service-block', 0, 2);
+clientWidth > 575 ? slider('services', '.col-md-12', 0, 2) : slider('services', '.col-md-12', 0, 2);
 timer('31 jule 2023');
 sendForm({
   formId: 'order1',

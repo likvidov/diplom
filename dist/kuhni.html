@@ -68,7 +68,7 @@
           <div class="phone pull-left hidden-md">
             <a href="tel:89876543210">+7 (987) <strong>654-32-10</strong></a>
           </div>
-          <div class="top-btn pull-left">
+          <div class="top-btn pull-left" data-modal="header-modal">
             <a href="#callback" class="btn btn-warning btn-md fancyboxModal">Заказать звонок!</a>
           </div>
         </div>
@@ -94,7 +94,7 @@
               </div>
             </div>
             <div class="col-sm-12 col-lg-6">
-              <div class="button">
+              <div class="button" data-modal="header-modal">
                 <a href="#callback" class="btn btn-warning btn-block fancyboxModal"><i class="phone-icon"></i> Заказать
                   звонок!</a>
               </div>
@@ -263,7 +263,7 @@
                 <a href="images/services/original/standart_kuhni/1.jpg" data-fancybox-group="fancybox-thumb-1"
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
-              <div class="service-button">
+              <div class="service-button" data-modal="services-modal">
                 <a href="#application" data-subject="Стандартные кухни"
                   class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a>
               </div>
@@ -316,7 +316,7 @@
                 <a href="images/services/original/standart_shkafy/1.png" data-fancybox-group="fancybox-thumb-2"
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
-              <div class="service-button">
+              <div class="service-button" data-modal="services-modal">
                 <a href="#application" data-subject="Стандартные шкафы-купе"
                   class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a>
               </div>
@@ -347,7 +347,7 @@
                 <a href="images/services/original/elitnie_kuhni/1.jpg" data-fancybox-group="fancybox-thumb-3"
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
-              <div class="service-button">
+              <div class="service-button" data-modal="services-modal">
                 <a href="#application" data-subject="Элитные кухни" class="btn btn-success btn-sm fancyboxModal">Вызвать
                   замерщика</a>
               </div>
@@ -374,7 +374,7 @@
                 <a href="images/services/original/elitnie_shkafy/1.jpg" data-fancybox-group="fancybox-thumb-4"
                   class="fancybox-thumb"><span>Смотреть работы</span></a>
               </p>
-              <div class="service-button">
+              <div class="service-button" data-modal="services-modal">
                 <a href="#application" data-subject="Элитные шкафы-купе"
                   class="btn btn-success btn-sm fancyboxModal">Вызвать замерщика</a>
               </div>
@@ -418,16 +418,16 @@
             <div class="order-form rf">
               <h3 class="order-form-heading">Оставить заявку</h3>
               <div class="order-form-subheading">на получение скидки 20%</div>
-              <form name="action-form" class="form-horizontal">
+              <form name="action-form" class="form-horizontal" id="order1">
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <input type="text" name="fio" class="form-control required" placeholder="ваше имя" />
+                    <input type="text" name="fio" class="form-control required" placeholder="ваше имя" required />
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-12">
                     <input type="text" name="phone" class="form-control required" placeholder="ваш телефон"
-                      data-mask="+7 (999) 999-99-99" />
+                      data-mask="+7 (999) 999-99-99" required />
                   </div>
                 </div>
                 <div class="form-group">
@@ -441,7 +441,7 @@
                   </div>
                 </div>
                 <div class="form-policy">
-                  <span class="help-block">Мы гарантируем 100% онфиденциальность. Ваша информация не
+                  <span class="help-block">Мы гарантируем 100% конфиденциальность. Ваша информация не
                     будет распространяться.</span>
                 </div>
               </form>
