@@ -1,3 +1,4 @@
+import calc from "./modules/calc";
 import modal from "./modules/modal";
 import sendForm from "./modules/sendForm";
 import slider from "./modules/slider";
@@ -27,6 +28,7 @@ sendForm({
   formId: 'order2',
   someElem: someElem
 });
+calc();
 
 window.addEventListener('scroll', () => {
   window.scrollY > 660 ? smoothScroll.classList.remove('hide') : smoothScroll.classList.add('hide');
