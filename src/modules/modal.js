@@ -21,6 +21,8 @@ const modal = () => {
     if (e.target.hasAttribute('data-modal')) {
       const modalId = e.target.getAttribute('data-modal');
       modalElem = document.querySelector(`.${modalId}`);
+      overlay.removeAttribute('data-modal');
+      modalElem.classList.remove('show');
     }
 
     if (e.target.hasAttribute('data-img')) {
@@ -28,9 +30,7 @@ const modal = () => {
       overlay.textContent = '';
     }
 
-    modalElem.classList.remove('show');
     overlay.classList.remove('show');
-    overlay.removeAttribute('data-modal');
   }
 
   openModalBtn.forEach(btn => {
