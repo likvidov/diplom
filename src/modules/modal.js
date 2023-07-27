@@ -2,6 +2,7 @@ const modal = () => {
   const overlay = document.querySelector('.overlay');
   const openModalBtn = document.querySelectorAll('div[data-modal]');
   const modalCloseBtn = document.querySelectorAll('span[title="Close"]');
+  const sertificateDocuments = document.querySelectorAll('.sertificate-document');
 
   const showModal = (e) => {
     e.preventDefault();
@@ -17,9 +18,14 @@ const modal = () => {
   const closeModal = (e) => {
     let modalElem = e.target.closest('.show');
 
-    if (e.target == overlay) {
+    if (e.target.hasAttribute('data-modal')) {
       const modalId = e.target.getAttribute('data-modal');
       modalElem = document.querySelector(`.${modalId}`);
+    }
+
+    if (e.target.hasAttribute('data-img')) {
+      overlay.removeAttribute('data-img');
+      overlay.textContent = '';
     }
 
     modalElem.classList.remove('show');
@@ -34,6 +40,21 @@ const modal = () => {
     btn.addEventListener('click', closeModal)
   });
   overlay.addEventListener('click', closeModal);
+  sertificateDocuments.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const url = e.target.parentNode.getAttribute('href');
+      const img = document.createElement('img')
+      img.setAttribute('src', url);
+      img.alt = 'document';
+      img.classList.add('img-thumbnail')
+
+      overlay.append(img)
+      overlay.classList.add('show');
+      overlay.setAttribute('data-img', true);
+    })
+  })
 }
 
 export default modal;
