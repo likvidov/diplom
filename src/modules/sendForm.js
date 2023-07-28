@@ -1,7 +1,7 @@
 const sendForm = ({ formId, someElem = [] }) => {
   const form = document.getElementById(formId);
   const statusBlock = document.createElement('div');
-  const loadText = 'Загрузка!';
+  const loadText = '<div class="preloader__image"></div>';
   const errorText = 'Ошибка...';
   const successText = 'Спасибо! Наш менеджер с вами свяжется!';
 
