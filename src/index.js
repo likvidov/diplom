@@ -1,4 +1,5 @@
 import calc from "./modules/calc";
+import comments from "./modules/comments";
 import modal from "./modules/modal";
 import sendForm from "./modules/sendForm";
 import slider from "./modules/slider";
@@ -6,8 +7,8 @@ import timer from "./modules/timer";
 import validator from "./modules/validator";
 
 const clientWidth = document.documentElement.clientWidth;
-const windowY = window.screenY;
-const someElem = document.body.classList.contains('balkony') ? [
+const balkonyPage = document.body.classList.contains('balkony');
+const someElem = balkonyPage ? [
   {
     type: 'input',
     id: 'calc-total'
@@ -28,7 +29,8 @@ sendForm({
   formId: 'order2',
   someElem: someElem
 });
-calc();
+if (balkonyPage) calc();
+comments();
 
 window.addEventListener('scroll', () => {
   window.scrollY > 660 ? smoothScroll.classList.remove('hide') : smoothScroll.classList.add('hide');

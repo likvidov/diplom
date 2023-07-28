@@ -859,12 +859,24 @@ p.services-image_mobile {
   background-position: 0px 0px;
 }
 
+.review-arrow-right.review-green:after {
+  transform: scale(-1, 1);
+}
+
 .review-orange:after {
   background-position: -39px 0px;
 }
 
+.review-arrow-right.review-orange:after {
+  transform: scale(-1, 1);
+}
+
 .review-gray:after {
   background-position: -78px 0px;
+}
+
+.review-arrow-left.review-gray:after {
+  transform: scale(-1, 1);
 }
 
 .review-margin-bottom {
@@ -1980,6 +1992,11 @@ input.error {
   bottom: 25px;
   transform: rotate(90deg);
   cursor: pointer;
+}
+
+.preloader__image {
+  height: 100px;
+  background: url('../images/spiner.svg') no-repeat 40% 50%;
 }
 
 @media (min-width: 576px) {

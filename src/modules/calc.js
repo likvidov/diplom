@@ -13,7 +13,7 @@ const calc = () => {
     const calcInputValue = +calcInput.value;
 
     let totalValue = 0;
-    
+
     if (calcInput.value !== '') {
       totalValue = calcInputValue * calcTypeValue * calcTypeMaterialValue;
     } else {
@@ -29,11 +29,19 @@ const calc = () => {
     });
   }
 
-  calcBlock.addEventListener('input', e => {
-    if (e.target == calcType || e.target == calcTypeMaterial || e.target == calcInput) {
-      countCalc();
-    }
-  })
+  try {
+    calcBlock.addEventListener('input', e => {
+      if (e.target == calcType || e.target == calcTypeMaterial || e.target == calcInput) {
+        countCalc();
+      }
+    })
+  
+    calcInput.addEventListener('input', () => {
+      calcInput.value = calcInput.value.replace(/[^\d]+/gi, "")
+    })
+  } catch (error) {
+    throw new Error(error.message)
+  }
 }
 
 export default calc;

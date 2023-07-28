@@ -1,7 +1,6 @@
 const validator = () => {
   const nameInputs = document.querySelectorAll('input[name=fio]');
   const phoneInputs = document.querySelectorAll('input[name=phone]');
-  const calcInput = document.querySelector('input[name=calc-input]');
 
   nameInputs.forEach(item => {
     item.addEventListener('input', (e) => {
@@ -33,10 +32,6 @@ const validator = () => {
         item.classList.remove('error');
       }
     })
-  })
-
-  calcInput.addEventListener('input', () => {
-    calcInput.value = calcInput.value.replace(/[^\d]+/gi, "")
   })
 }
 
