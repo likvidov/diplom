@@ -1,9 +1,13 @@
 const timer = (deadline) => {
 
   const timerDays = document.querySelector('.count_1>span');
+  const timerDays2 = document.querySelectorAll('.count_1>span')[1];
   const timerHours = document.querySelector('.count_2>span');
+  const timerHours2 = document.querySelectorAll('.count_2>span')[1];
   const timerMinutes = document.querySelector('.count_3>span');
+  const timerMinutes2 = document.querySelectorAll('.count_3>span')[1];
   const timerSeconds = document.querySelector('.count_4>span');
+  const timerSeconds2 = document.querySelectorAll('.count_4>span')[1];
 
   const getTimeRemaining = () => {
     let dateStop = new Date(deadline).getTime();
@@ -32,6 +36,11 @@ const timer = (deadline) => {
     timerHours.textContent = getTime.hours.toString().length === 1 ? '0' + getTime.hours : getTime.hours;
     timerMinutes.textContent = getTime.minutes.toString().length === 1 ? '0' + getTime.minutes : getTime.minutes;
     timerSeconds.textContent = getTime.seconds.toString().length === 1 ? '0' + getTime.seconds : getTime.seconds;
+
+    timerDays2.textContent = getTime.days.toString().length === 1 ? '0' + getTime.days : getTime.days;
+    timerHours2.textContent = getTime.hours.toString().length === 1 ? '0' + getTime.hours : getTime.hours;
+    timerMinutes2.textContent = getTime.minutes.toString().length === 1 ? '0' + getTime.minutes : getTime.minutes;
+    timerSeconds2.textContent = getTime.seconds.toString().length === 1 ? '0' + getTime.seconds : getTime.seconds;
   }
 
   let idInterval = setInterval(updateClock, 1000);
