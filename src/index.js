@@ -17,8 +17,6 @@ const someElem = balkonyPage ? [
 ] : '';
 const smoothScroll = document.querySelector('.smooth-scroll');
 
-console.log(orderForms);
-
 modal();
 clientWidth > 575 ? slider('benefits', '.benefits__item', 0, 3) : slider('benefits', '.benefits__item', 0, 1);
 clientWidth > 575 ? slider('services', '.col-md-12', 0, 2) : slider('services', '.col-md-12', 0, 2);
