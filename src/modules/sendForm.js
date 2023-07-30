@@ -1,5 +1,4 @@
-const sendForm = ({ formId, someElem = [] }) => {
-  const form = document.getElementById(formId);
+const sendForm = ({ form, someElem = [] }) => {
   const statusBlock = document.createElement('div');
   const loadText = '<div class="preloader__image"></div>';
   const errorText = 'Ошибка...';

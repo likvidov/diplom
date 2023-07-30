@@ -8,6 +8,7 @@ import validator from "./modules/validator";
 
 const clientWidth = document.documentElement.clientWidth;
 const balkonyPage = document.body.classList.contains('balkony');
+const orderForms = document.querySelectorAll('form');
 const someElem = balkonyPage ? [
   {
     type: 'input',
@@ -16,19 +17,19 @@ const someElem = balkonyPage ? [
 ] : '';
 const smoothScroll = document.querySelector('.smooth-scroll');
 
+console.log(orderForms);
+
 modal();
 clientWidth > 575 ? slider('benefits', '.benefits__item', 0, 3) : slider('benefits', '.benefits__item', 0, 1);
 clientWidth > 575 ? slider('services', '.col-md-12', 0, 2) : slider('services', '.col-md-12', 0, 2);
 timer('31 jule 2023');
 validator();
-sendForm({
-  formId: 'order1',
-  someElem: someElem
-});
-sendForm({
-  formId: 'order2',
-  someElem: someElem
-});
+orderForms.forEach(form => {
+  sendForm({
+    form, 
+    someElem: someElem
+  })
+})
 if (balkonyPage) calc();
 comments();
 
